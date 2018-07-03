@@ -82,3 +82,7 @@ body {
     cursor: pointer;
     transform: scale(0.9);
 }
+
+#computerChoose{
+    text-align: right;
+}

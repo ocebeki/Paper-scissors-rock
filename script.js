@@ -3,30 +3,31 @@ let AI = function () {
 
     let x = Math.floor((Math.random() * 3) + 1);
     if (x == 1) {
-        computerChoose = "scissors"
+        computerChoose = "Scissors"
     } else if (x == 2) {
-        computerChoose = "paper"
+        computerChoose = "Paper"
     } else {
-        computerChoose = "rock"
+        computerChoose = "Rock"
     }
 
 };
 
+
 // ------------------------------------------user choice
 let scissors = document.getElementById('scissors');
 scissors.addEventListener('click', function () {
-    userChoice = "scissors";
+    userChoice = "Scissors";
     AI()
 })
 let paper = document.getElementById('paper');
 paper.addEventListener('click', function () {
-    userChoice = "paper"
+    userChoice = "Paper"
     AI()
 
 })
 let rock = document.getElementById('rock');
 rock.addEventListener('click', function () {
-        userChoice = "rock"
+        userChoice = "Rock"
         AI()
 
     })
@@ -45,6 +46,7 @@ let computerChoose = "";
 let computerScores = 0;
 
 let getComputerScores = document.getElementById('computerScores');
+let getComputerChoose = document.getElementById('computerChoose');
 getComputerScores.innerHTML = "Comp: " + computerScores++;
 getComputerScores.style.fontSize = "25px";
 
@@ -64,37 +66,43 @@ let tryAgain = document.getElementById('playAgain').addEventListener('click', fu
 // ------------------------ compare choices
 const compare = function (choice1, choice2) {
 
-    if (choice1 === "scissors") {
-        if (choice2 === "paper") {
+    if (choice1 === "Scissors") {
+        if (choice2 === "Paper") {
             getUserScores.innerHTML = userName + ": " + userScores++;
             message.innerHTML = "Scissors cut the paper!"
             message2.innerHTML = "Win!"
-        } else if (choice2 === "rock") {
+            getComputerChoose.innerHTML ="Computer chosed " + computerChoose
+        } else if (choice2 === "Rock") {
             getComputerScores.innerHTML = "Comp: " + computerScores++;
             message.innerHTML = "Rock destroy scissors!"
             message2.innerHTML = "Lose!"
+            getComputerChoose.innerHTML ="Computer chosed " + computerChoose
         }
     }
-    if (choice1 === "paper") {
-        if (choice2 === "rock") {
+    if (choice1 === "Paper") {
+        if (choice2 === "Rock") {
             getUserScores.innerHTML = userName + ": " + userScores++;
             message.innerHTML = "Paper cover the rock!"
             message2.innerHTML = "Win!"
-        } else if (choice2 === "scissors") {
+            getComputerChoose.innerHTML ="Computer chosed " + computerChoose
+        } else if (choice2 === "Scissors") {
             getComputerScores.innerHTML = "Comp: " + computerScores++;
             message.innerHTML = "Scissors cut the paper!"
             message2.innerHTML = "Lose!"
+            getComputerChoose.innerHTML ="Computer chosed " + computerChoose
         }
     }
-    if (choice1 === "rock") {
-        if (choice2 === "scissors") {
+    if (choice1 === "Rock") {
+        if (choice2 === "Scissors") {
             getUserScores.innerHTML = userName + ": " + userScores++;
             message.innerHTML = "Rock destroy scissors!"
             message2.innerHTML = "Win!"
-        } else if (choice2 === "paper") {
+            getComputerChoose.innerHTML = "Computer chosed " + computerChoose
+        } else if (choice2 === "Paper") {
             getComputerScores.innerHTML = "Comp: " + computerScores++;
             message.innerHTML = "Paper cover the rock!"
             message2.innerHTML = "Lose!"
+            getComputerChoose.innerHTML = "Computer chosed " + computerChoose
         }
     }
     if (userScores > 5) {
