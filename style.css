@@ -86,3 +86,13 @@ body {
 #computerChoose{
     text-align: right;
 }
+
+@media(max-width:635px) {
+    .gameWrapper {
+        width: 290px;
+    }
+    .card {
+        height: 130px;
+    }
+    
+}
